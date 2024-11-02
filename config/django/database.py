@@ -31,8 +31,6 @@ class DatabaseSettings(BaseSettings):
         case_sensitive=True,
     )
 
-    logger.info("--->> Trying to connect database")
-
     @computed_field()
     def DATABASES(self) -> dict[str, Any]:
         return {
@@ -45,8 +43,6 @@ class DatabaseSettings(BaseSettings):
                 "PORT": self.POSTGRES_PORT,
             },
         }
-
-    logger.success("--->> Database connected successfully")
 
 
 db_config = DatabaseSettings()

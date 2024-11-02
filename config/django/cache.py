@@ -1,5 +1,4 @@
 from typing import Any
-from loguru import logger
 from pydantic import Field, computed_field
 from pydantic_settings import BaseSettings
 from config.django.database import db_config
@@ -17,9 +16,6 @@ class CacheSettings(BaseSettings):
         repr=False,
     )
 
-    # This computed field returns the CACHES configuration based on the provided settings.
-    logger.info("---->> Trying to connect redis to django.core.cache")
-
     @computed_field()
     def CACHES(self) -> dict[str, Any]:
         return {
@@ -31,8 +27,6 @@ class CacheSettings(BaseSettings):
                 },
             },
         }
-
-    logger.success("--->> Redis Cache connected successfully")
 
 
 cache_config = CacheSettings()

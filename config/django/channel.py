@@ -1,5 +1,4 @@
 from typing import Any
-from loguru import logger
 from pydantic import Field
 from pydantic_settings import BaseSettings
 from config.django.database import db_config
@@ -10,7 +9,6 @@ class ChannelSettings(BaseSettings):
     This class defines the setting configuration for the channel layer.
     """
 
-    logger.info("--->> Start executing the channel layer configuration")
     CHANNEL_LAYERS: dict[str, Any] = Field(
         default={
             "default": {
@@ -24,7 +22,6 @@ class ChannelSettings(BaseSettings):
         },
         frozen=True,
     )
-    logger.success("--->> Channel layer configuration executed successfully")
 
 
 channel_config = ChannelSettings()

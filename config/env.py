@@ -1,5 +1,4 @@
 from enum import Enum
-from loguru import logger
 from pydantic import Field, computed_field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -57,8 +56,6 @@ class EnvSettings(BaseSettings):
         frozen=True,  # Makes this field immutable after initialization
     )
 
-    logger.info("--->> Reading .env file to for the secret data")
-
     @computed_field
     def env_file(self) -> str:
         """
@@ -82,7 +79,6 @@ class EnvSettings(BaseSettings):
             case EnvironmentChoices.PRODUCTION:
                 return EnvFileChoices.PRODUCTION.value
 
-    logger.success("--->> Env file read successfully")
     # Configuration settings for Pydantic
     model_config = SettingsConfigDict(
         env_file=(".env"),  # Default .env file location
