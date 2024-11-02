@@ -1,5 +1,4 @@
 from typing import Any
-from loguru import logger
 from pydantic import Field, SecretStr, computed_field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from config.env import env_config
