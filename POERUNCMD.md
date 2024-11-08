@@ -32,7 +32,7 @@ Start the Django development server on 0.0.0.0:8000. the main command is `python
     poetry run poe dev
 ```
 
-Description: Runs python manage.py runserver 0.0.0.0:8000, allowing access to the development server from any IP address.
+Runs python manage.py runserver 0.0.0.0:8000, allowing access to the development server from any IP address.
 
 ## 2. Make Migrations
 
@@ -42,7 +42,7 @@ Generate new migrations based on model changes.the main command is `python manag
     poetry run poe migrations
 ```
 
-Description: Runs python manage.py makemigrations, which will create migration files for any changes detected in your models.
+Runs python manage.py makemigrations, which will create migration files for any changes detected in your models.
 
 ## 3. Apply Migrations
 
@@ -52,7 +52,7 @@ Apply migrations to the database.
     poetry run poe migrate
 ```
 
-Description: Runs python manage.py migrate, applying all pending migrations to the database.
+Runs python manage.py migrate, applying all pending migrations to the database.
 
 ## 4. Create a New Django Application
 
@@ -62,6 +62,6 @@ Create a new Django app by providing the app name as an argument. for example: `
     poetry run poe app <app_name>
 ```
 
-Description: Runs python manage.py startapp <app_name>, creating the necessary directory structure and files for a new Django application.
+Runs python manage.py startapp <app_name>, creating the necessary directory structure and files for a new Django application.
 
 Note: Replace <app_name> with the desired name for your new app.
