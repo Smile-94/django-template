@@ -45,7 +45,7 @@ Now Create a env directory and inside the env directory create a a `.env` file b
 Run database migrations to set up your database schema:
 
 ```zsh
-   python manage.py migrate
+   poetry run python manage.py migrate
 
 ```
 
@@ -54,5 +54,5 @@ Run database migrations to set up your database schema:
 Start the Django development server:
 
 ```zsh
-   python manage.py runserver 0.0.0.0:8000
+   poetry python manage.py runserver 0.0.0.0:8000
 ```

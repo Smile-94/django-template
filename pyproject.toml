@@ -6,6 +6,12 @@ authors = ["Your Name <you@example.com>"]
 readme = "README.md"
 package-mode = false
 
+[tool.poe.tasks]
+dev = "python manage.py runserver 0.0.0.0:8000"
+migrations = "python manage.py makemigrations"
+migrate = "python manage.py migrate"
+app = "python manage.py startapp"
+
 [tool.poetry.dependencies]
 
 # Python dependencies
@@ -51,8 +57,12 @@ psycopg = "^3.2.3"
 pyseto = "^1.7.9"
 whitenoise = "^6.8.2"
 phonenumbers = "^8.13.48"
+poethepoet = "^0.29.0"
 
 
+
+[tool.poetry.group.dev.dependencies]
+poethepoet = "^0.29.0"
 
 [build-system]
 requires = ["poetry-core"]

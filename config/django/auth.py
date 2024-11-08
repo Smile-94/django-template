@@ -1,11 +1,19 @@
 from pydantic_settings import BaseSettings
 
+AUTHENTICATION_BACKENDS = [
+    "apps.user.backends.MyAuthBackend",
+    "django.contrib.auth.backends.ModelBackend",
+]
+
 
 class AuthSettings(BaseSettings):
     FIRST_RUN: bool = True  # Custom flag to check first run
     AUTH_USER_MODEL: str = "user.User"
 
-    AUTHENTICATION_BACKENDS: list[str] = ["django.contrib.auth.backends.ModelBackend"]
+    AUTHENTICATION_BACKENDS: list[str] = [
+        "backends.MyAuthBackend",
+        "django.contrib.auth.backends.ModelBackend",
+    ]
 
     AUTH_PASSWORD_VALIDATORS: list[dict[str, str]] = [
         {

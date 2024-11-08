@@ -10,7 +10,6 @@ class InstalledAppsSettings(BaseSettings):
         "rest_framework",
         "rangefilter",
         "drf_spectacular",
-        
     ]
 
     LOCAL_APPS: list[str] = [
